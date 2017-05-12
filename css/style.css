@@ -1,0 +1,208 @@
+.page-header {
+    text-align: center;
+}
+
+.home_image {
+    display: block;
+    text-align: center;
+}
+
+.home_header {
+    text-align: center;
+}
+
+.home_icon {
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    height: auto;
+}
+
+#home_kitchen {
+  background-color: #92F04E;
+  border-radius: 30px;
+  text-align: center;
+  border: 6px solid #c4ead4;
+}
+
+.nav {
+  background-color: #79cf9d;
+  padding: 15px;
+  width: 100%;
+}
+
+#home_qr {
+  background-color: #45D9F6;
+  border-radius: 30px;
+  border: 6px solid #c4ead4;
+}
+
+#home_recipes {
+  background-color: #F6BB45;
+  border-radius: 30px;
+  border: 8px solid #c4ead4;
+}
+
+#home_logo {
+  width: 225px;
+  height: 225px;
+  margin: 30px;
+}
+
+#home_apps {
+  background-color: #F64545;
+  border-radius: 30px;
+  border: 6px solid #c4ead4;
+}
+
+#home_sections {
+  background-color: #d7f0e1;
+  overflow: auto;
+  padding: 20px;
+  border-radius: 40px;
+}
+
+h5 {
+  color: black;
+  font-weight: bolder;
+  font-size: 120%;
+}
+
+.home_click:hover {
+  text-decoration: none;
+}
+
+.home_click:visited {
+  color: black;
+}
+
+.home_click:active {
+  color: black;
+  text-decoration: none;
+}
+
+.home_click:link {
+  color: black;
+}
+
+.home_row {
+  text-align: center;
+}
+
+body {
+  background-color: #EFF9F3;
+}
+
+nav {
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+/* Affiliated Apps */
+#apps_header {
+  text-align: center;
+  margin: 20px;
+  margin-top: 40px;
+}
+
+.related_apps {
+  border: 1px solid black;
+  padding: 20px 0 20px 10px;
+  background-color: #f5fbf7;
+}
+
+.related_apps2 {
+  border: 1px solid black;
+  padding: 20px 10px 20px 0;
+  background-color: #f5fbf7;
+
+}
+
+.app_logo {
+  width: 110px;
+  height: 100px;
+  margin-top: 5%;
+  margin-left: 11px;
+}
+
+.app_name {
+  margin-top: 10px;
+  color: #538EF5;
+  font-weight: bold;
+}
+
+.app_name:hover {
+  text-decoration: underline;
+}
+
+.app_name:visited {
+  color: black;
+}
+
+.app_info {
+  text-align: center;
+}
+
+.app_detail {
+  word-wrap: break-word;
+}
+
+#apps_header .fa-users {
+  color: #E880C7;
+}
+
+.apps_page {
+  background-color: #EFF9F3;
+}
+
+/* My Kitchen */
+#ingredients {
+  font-weight:bolder;
+  border: 2px solid black;
+  padding: 20px;
+  margin: 20px;
+  background-color: #c4ead4;
+  border-radius: 25px;
+}
+
+#ingredients form {
+  text-align: center;
+}
+
+#ingredients ul {
+  margin: 0.75em 0;
+  padding: 0 1em;
+  list-style: none;
+}
+
+li:before {
+  content: "";
+  border-color: transparent #111;
+  border-style: solid;
+  border-width: 0.35em 0 0.35em 0.45em;
+  display: block;
+  height: 0;
+  width: 0;
+  left: -1em;
+  top: 0.9em;
+  position: relative;
+}
+
+input[type="text"] {
+  border: 2px solid black;
+}
+
+/* SPOON INPUT */
+.recipe_list {
+  border: 1px solid black;
+}
+
+.recipe_name {
+  font-weight: bolder;
+  text-align: center;
+}
+
+.recipe_id {
+  text-align: right;
+}
