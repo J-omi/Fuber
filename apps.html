@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Fuber</title>
+    <title>Fuber Friends</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,93 +13,119 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- css link-->
+    <link rel="stylesheet" href="css/simple-sidebar.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/jquery.js"></script>
 </head>
 
 <body class="apps_page">
+    <div id="wrapper">
+        <header role="banner" class="navbar navbar-fixed-top">
+            <div class="navbar-header">
+                <a href="#menu-click" id="menu-click">
+                    <div class="container" onclick="myFunction(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </a>
+            </div>
+        </header>
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li>
+                </li>
+                <li class="sidebar-brand">
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-home"></i>Home</a>
+                </li>
+                <li>
+                    <a href="kitchen.html"><i class="fa fa-cutlery"></i>My Kitchen</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-qrcode"></i>QR scanner</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-archive"></i>Recipes</a>
+                </li>
+                <li>
+                    <a href="apps.html"><i class="fa fa-users"></i>Fuber Friends</a>
+                </li>
+            </ul>
+        </div>
+        <div id="apps_header">
+            <i class="fa fa-users fa-5x" aria-hidden="true"></i>
+            <h1 class="apps_title">Fuber Friends</h1>
+        </div>
 
-  <nav>
-      <div class="nav">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-              <a href="">Link</a>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-              <a href="">Link</a>
-          </div>
-      </div>
-  </nav>
+        <h2 class="app_section col-sm-12 col-xs-12">Similar Apps to Us</h2>
+        <div class="col-sm-12 col-xs-12 app_section_detail">
+            Discover alternate takes on the topic of Zero Food Waste!
+        </div>
+        <div class="related_apps col-sm-12 col-xs-12">
+            <img class="col-sm-3 col-xs-3 app_logo" src="image/vegismartlogo.png" alt="Logo">
+            <div class="app_info col-sm-8 col-xs-8">
+                <a href="vegismart.site">
+                    <h3 class="app_name">Vegi-Smart</h3>
+                </a>
+                <p class="app_detail">Mobile focused web app which allows users to manage shopping lists and keep track of the fruits and veggies in their fridge. The app will generate reports to give the user feedback on how much food they've wasted.</p>
+            </div>
+        </div>
 
-  <div id="apps_header">
-    <i class="fa fa-users fa-5x" aria-hidden="true"></i>
-    <h1>Fuber Friends</h1>
-  </div>
+        <div class="related_apps2 col-sm-12 col-xs-12">
+            <div class="app_info col-sm-8 col-xs-8">
+                <a href="http://take2foods.com">
+                    <h3 class="app_name">Take 2</h3>
+                </a>
+                <p class="app_detail">Take 2 is a recipe discovery app that lets users suggest two ingredients to find a personalized recipe made by the developers. This app increases the discovery of even more recipes!</p>
+            </div>
+            <img class="col-sm-3 col-xs-3 app_logo" src="image/take2-logo-1.png" alt="Logo">
+        </div>
 
-  <span class="col-sm-12 col-xs-12">Similar Apps to Us</span>
-  <div class="related_apps col-sm-12 col-xs-12">
-    <img class="col-sm-3 col-xs-3 app_logo" src="image/66BgcxB.jpg" alt="Logo">
-    <div class="app_info col-sm-8 col-xs-8">
-        <a><h3 class="app_name">Vege-Smart</h3></a>
-        <p class="app_detail">Mobile focused web app which allows users to manage shopping
-          lists and keep track of the fruits and veggies in their fridge. The app will
-           generate reports to give the user feedback on how much food they've wasted.</p>
+        <h2 id="apps_games" class="col-sm-12 col-xs-12 app_section">Games on Zero Waste</h2>
+        <div class="col-sm-12 col-xs-12 app_section_detail">
+            Test your knowledge on Zero Food Waste in a fun way!
+        </div>
+        <div class="related_apps col-sm-12 col-xs-12">
+            <img class="col-sm-3 col-xs-3 app_logo" src="image/cp.png" alt="Logo">
+            <div class="app_info col-sm-8 col-xs-8">
+                <a href="http://students.bcitdev.com/A01009216/Captain-Plan-It/index.php">
+                    <h3 class="app_name">Captain Plan-It</h3>
+                </a>
+                <p class="app_detail">Captain Plan-It is an educational quiz game where users answer questions related to food groups. Answer correctly to earn keys which can unlock accessories for your own personal hero!</p>
+            </div>
+        </div>
+
+        <div class="related_apps2 col-sm-12 col-xs-12">
+            <div class="app_info col-sm-8 col-xs-8">
+                <a>
+                    <h3 class="app_name">Race To Zero</h3>
+                </a>
+                <p class="app_detail">Race To Zero is an interactive game designed to inform players about the issue of food waste. Race through the levels to get the fastest times, all while learning about this important issue!</p>
+            </div>
+            <img class="col-sm-3 col-xs-3 app_logo" src="image/r2zlogo.png" alt="Logo">
+        </div>
     </div>
-  </div>
+    <script src="js/navbar.js"></script>
+    <script>
+        $(window).scroll({
+                previousTop: 0
+            },
+            function() {
+                var currentTop = $(window).scrollTop();
+                if (currentTop < this.previousTop) {
+                    $(".container").show();
+                } else {
+                    $(".container").hide();
+                }
+                this.previousTop = currentTop;
+            });
 
-  <div class="related_apps2 col-sm-12 col-xs-12">
-    <div class="app_info col-sm-8 col-xs-8">
-        <a href="http://take2foods.com"><h3 class="app_name">Take 2</h3></a>
-        <p class="app_detail">Take 2 is a recipe discovery app that lets users suggest
-           two ingredients to find a personalized recipe made by the developers!</p>
-    </div>
-    <img class="col-sm-3 col-xs-3 app_logo" src="image/take2-logo-1.png" alt="Logo">
-  </div>
+    </script>
 
-  <span class="col-sm-12 col-xs-12">Games on Zero Waste</span>
-  <div class="related_apps col-sm-12 col-xs-12">
-    <img class="col-sm-3 col-xs-3 app_logo" src="image/cp.png" alt="Logo">
-    <div class="app_info col-sm-8 col-xs-8">
-        <a href="http://students.bcitdev.com/A01009216/Captain-Plan-It/index.php"><h3 class="app_name">Captain Plan-It</h3></a>
-        <p class="app_detail">Captain Plan-It is an educational quiz game where users answer
-          questions related to food groups. Answer correctly to earn keys which can unlock
-          accessories for your own personal hero!</p>
-    </div>
-  </div>
-
-  <div class="related_apps2 col-sm-12 col-xs-12">
-    <div class="app_info col-sm-8 col-xs-8">
-        <a><h3 class="app_name">Race To Zero</h3></a>
-        <p class="app_detail">Race To Zero is an interactive game designed to inform players
-           about the issue of food waste. Race through the levels to get the fastest times,
-            all while learning about this important issue!</p>
-    </div>
-    <img class="col-sm-3 col-xs-3 app_logo" src="image/66BgcxB.jpg" alt="Logo">
-  </div>
-
-  <script>
-  const sidebarBox = document.querySelector('#box'),
-  sidebarBtn = document.querySelector('#btn'),
-  pageWrapper = document.querySelector('#page-wrapper');
-
-sidebarBtn.addEventListener('click', event => {
-  sidebarBtn.classList.toggle('active');
-  sidebarBox.classList.toggle('active');
-});
-
-pageWrapper.addEventListener('click', event => {
-
-  if (sidebarBox.classList.contains('active')) {
-      sidebarBtn.classList.remove('active');
-      sidebarBox.classList.remove('active');
-  }
-});
-
-window.addEventListener('keydown', event => {
-
-  if (sidebarBox.classList.contains('active') && event.keyCode === 27) {
-      sidebarBtn.classList.remove('active');
-      sidebarBox.classList.remove('active');
-  }
-});
-  </script>
 </body>
+
+</html>

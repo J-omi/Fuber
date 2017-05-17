@@ -1,7 +1,3 @@
-.page-header {
-    text-align: center;
-}
-
 .home_image {
     display: block;
     text-align: center;
@@ -19,190 +15,225 @@
 }
 
 #home_kitchen {
-  background-color: #92F04E;
-  border-radius: 30px;
-  text-align: center;
-  border: 6px solid #c4ead4;
-}
-
-.nav {
-  background-color: #79cf9d;
-  padding: 15px;
-  width: 100%;
+    background-color: #92F04E;
+    border-radius: 30px;
+    text-align: center;
+    border: 6px solid #c4ead4;
 }
 
 #home_qr {
-  background-color: #45D9F6;
-  border-radius: 30px;
-  border: 6px solid #c4ead4;
+    background-color: #45D9F6;
+    border-radius: 30px;
+    border: 6px solid #c4ead4;
 }
 
 #home_recipes {
-  background-color: #F6BB45;
-  border-radius: 30px;
-  border: 8px solid #c4ead4;
+    background-color: #F6BB45;
+    border-radius: 30px;
+    border: 8px solid #c4ead4;
 }
 
 #home_logo {
-  width: 225px;
-  height: 225px;
-  margin: 30px;
+    width: 225px;
+    height: 225px;
+    margin: 30px;
 }
 
 #home_apps {
-  background-color: #F64545;
-  border-radius: 30px;
-  border: 6px solid #c4ead4;
+    background-color: #F64545;
+    border-radius: 30px;
+    border: 6px solid #c4ead4;
 }
 
 #home_sections {
-  background-color: #d7f0e1;
-  overflow: auto;
-  padding: 20px;
-  border-radius: 40px;
+    background-color: #d7f0e1;
+    overflow: auto;
+    padding: 20px;
+    border-radius: 40px;
 }
 
 h5 {
-  color: black;
-  font-weight: bolder;
-  font-size: 120%;
+    color: black;
+    font-weight: bolder;
+    font-size: 120%;
 }
 
 .home_click:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .home_click:visited {
-  color: black;
+    color: black;
 }
 
 .home_click:active {
-  color: black;
-  text-decoration: none;
+    color: black;
+    text-decoration: none;
 }
 
 .home_click:link {
-  color: black;
+    color: black;
 }
 
 .home_row {
-  text-align: center;
+    text-align: center;
 }
 
 body {
-  background-color: #EFF9F3;
-}
-
-nav {
-    text-align: center;
-    display: block;
-    width: 100%;
+    background-color: #EFF9F3;
 }
 
 /* Affiliated Apps */
+
 #apps_header {
-  text-align: center;
-  margin: 20px;
-  margin-top: 40px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.apps_title {
+    font-weight: bolder;
+}
+
+.app_section_detail {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-style: italic;
 }
 
 .related_apps {
-  border: 1px solid black;
-  padding: 20px 0 20px 10px;
-  background-color: #f5fbf7;
+    border: 1px solid black;
+    padding: 20px 0 20px 10px;
+    background-color: #f5fbf7;
 }
 
 .related_apps2 {
-  border: 1px solid black;
-  padding: 20px 10px 20px 0;
-  background-color: #f5fbf7;
+    border: 1px solid black;
+    padding: 20px 10px 20px 0;
+    background-color: #f5fbf7;
+}
 
+.app_section {
+    color: #626864;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 28px;
+    font-weight: 600;
+    border: 1px solid #b3e0c6;
+    background-color: #b3e0c6;
+    padding: 7px;
+    border-radius: 30px;
+}
+
+#apps_games {
+    margin-top: 45px;
 }
 
 .app_logo {
-  width: 110px;
-  height: 100px;
-  margin-top: 5%;
-  margin-left: 11px;
+    width: 120px;
+    height: 110px;
+    margin-top: 5%;
 }
 
 .app_name {
-  margin-top: 10px;
-  color: #538EF5;
-  font-weight: bold;
+    margin-top: 10px;
+    color: #538EF5;
+    font-weight: bold;
 }
 
 .app_name:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .app_name:visited {
-  color: black;
+    color: black;
 }
 
 .app_info {
-  text-align: center;
+    text-align: center;
 }
 
 .app_detail {
-  word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 #apps_header .fa-users {
-  color: #E880C7;
+    color: #E880C7;
 }
 
 .apps_page {
-  background-color: #EFF9F3;
+    background-color: #EFF9F3;
 }
 
+
 /* My Kitchen */
+
 #ingredients {
-  font-weight:bolder;
-  border: 2px solid black;
-  padding: 20px;
-  margin: 20px;
-  background-color: #c4ead4;
-  border-radius: 25px;
+    font-weight: bolder;
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px;
+    background-color: #c4ead4;
+    border-radius: 25px;
 }
 
 #ingredients form {
-  text-align: center;
+    text-align: center;
 }
 
 #ingredients ul {
-  margin: 0.75em 0;
-  padding: 0 1em;
-  list-style: none;
+    margin: 0.75em 0;
+    padding: 0 1em;
+    list-style: none;
 }
 
 li:before {
-  content: "";
-  border-color: transparent #111;
-  border-style: solid;
-  border-width: 0.35em 0 0.35em 0.45em;
-  display: block;
-  height: 0;
-  width: 0;
-  left: -1em;
-  top: 0.9em;
-  position: relative;
+    content: "";
+    border-color: transparent #111;
+    border-style: solid;
+    border-width: 0.35em 0 0.35em 0.45em;
+    display: block;
+    height: 0;
+    width: 0;
+    left: -1em;
+    top: 0.9em;
+    position: relative;
 }
 
 input[type="text"] {
-  border: 2px solid black;
+    border: 2px solid black;
 }
 
+
 /* SPOON INPUT */
+
 .recipe_list {
-  border: 1px solid black;
+    border: 1px solid black;
 }
 
 .recipe_name {
-  font-weight: bolder;
-  text-align: center;
+    font-weight: bolder;
+    text-align: center;
 }
 
 .recipe_id {
-  text-align: right;
+  color: grey;
+  float: right;
+  margin: 0 10px 10px 0;
+}
+
+#picture {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+  width: 40%;
+  height: 35%;
+  border: 1.5px solid grey;
+  border-radius: 7px;
+}
+
+.btn-info {
+  display: block;
+  margin: 0 auto;
+  padding: 4px 6px 4px 6px;
 }

@@ -18,7 +18,8 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "mashape/unirest-php": "^3.0",
-        "apimatic/jsonmapper": "~1.0.0"
+        "apimatic/jsonmapper": "~1.0.0",
+        "ktamas77/firebase-php": "dev-master"
     },
     "autoload": {
         "psr-4": {

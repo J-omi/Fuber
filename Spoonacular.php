@@ -24,13 +24,36 @@ class Spoonacular
             $ingredientList = $ingredientList . $list . $delimeter;
             $counter++;
         }
+/*
+        if(strcasecmp($ingredientList, 'sugar' . $delimeter . 'spice' . $delimeter . 'everything nice' . $delimeter . 'chemical x') == 0){
+          header("Location: 162.221.205.237/powerpuff.html");
+          exit();
+        }
+        */
 
         $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients='.$ingredientList.'&limitLicense=false&number=5&ranking=1",
         array("X-Mashape-Key" => $this->mashable_key, "Accept" => "application/json"));
         return $response->body;
     }
 
-
+    public function easterEgg($power){
+      $counter = 0;
+      foreach($power as $ingredient){
+        if(strcasecmp($ingredient, 'sugar') == 0){
+          $counter++;
+        } else if(strcasecmp($ingredient, 'spice') == 0){
+          $counter++;
+        } else if(strcasecmp($ingredient, 'everything nice') == 0){
+          $counter++;
+        } else if(strcasecmp($ingredient, 'chemical x') == 0){
+          $counter++;
+        }
+      }
+      if($counter == 4){
+        header("Location: powerpuff.html");
+        exit();
+      }
+    }
     public function getRecipeSteps($id)
     {
         $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" . $id . "/analyzedInstructions?stepBreakdown=true",
