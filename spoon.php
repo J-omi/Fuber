@@ -63,20 +63,20 @@
 						6) missedIngredientCount
 						7) likes
 					*/
-
 					$mash_key = "XwoI3C2l7bmshg0FQlKrUB5tchLEp19b8lNjsnAQ0UtV4uFumg";
 					$spoonacular = new Spoonacular($mash_key);
           $spoonacular->easterEgg($_POST);
 					$recipes = $spoonacular->getRecipeByIngredients($_POST);
 
         	foreach ($recipes as $recipe){
-            echo '<div class="recipe_list">';
-          	echo '<h4 class="recipe_name">' . $recipe->title . '</h4><br>';
+            echo '<div class="recipe_list col-sm-12 col-xs-12">';
+            echo '<img id="picture" class="col-sm-4 col-xs-4" src="' . $recipe->image . '">';
+          	echo '<div class="col-sm-8 col-xs-8"><h4 class="recipe_name">' . $recipe->title . '</h4><br>';
             echo '<span class="recipe_id">Recipe #: ' . $recipe->id . '</span><br>';
-            echo '<img id="picture" src=' . $recipe->image . ' style="width:110px;height:110px;"><br><br>';
           	echo '<form action="recipe.php" method="post">';
+            echo '<input type="hidden" name="name" value="'.$recipe->title.'">';
 	  				echo '<input type="hidden" name="ID" value="'.$recipe->id.'" >';
-	  				echo '<input type="submit" class="btn btn-info" value="Get Detailed Recipe Instructions"/>';
+	  				echo '<input type="submit" class="btn btn-info" value="Get Detailed Recipe Instructions"/></div>';
 	  				echo '</form><br>';
             echo '</div>';
         	}

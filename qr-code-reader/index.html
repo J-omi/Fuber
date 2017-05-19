@@ -6,6 +6,7 @@
   <body>
 
   <video autoplay></video>
+  <select id="cameraSelect"></select>
   <button id="reset">Reset</button>
   <button id="stop" >Stop</button>
 
@@ -22,10 +23,19 @@
       alert('Your browser doesn\'t match the required specs.');
       throw new Error('Canvas and getUserMedia are required');
     }
-    var video = document.querySelector('video');
-    var reset = document.querySelector('#reset');
-    var stop = document.querySelector('#stop');
-    function resultHandler (err, result) {
+    //var video = document.querySelector('video');
+    //var reset = document.querySelector('#reset');
+    //var stop = document.querySelector('#stop');
+ 
+   var elems = {
+      selector : document.querySelector('select'),
+      reset : document.getElementById('reset'),
+      stop : document.getElementById('reset'),
+      video: document.querySelector('video'),
+      result: document.getElementById('result')
+    }
+
+   function resultHandler (err, result) {
       if (err)
         return console.log(err.message);
       alert(result);
@@ -38,8 +48,32 @@
     // the result and then prepares the
     // videoElement to send its source to the
     // decoder.
-    qr.decodeFromCamera(video, resultHandler);
-    // attach some event handlers to reset and
+
+	qr.getVideoSources(function (err, sources) {
+      if (err || (sources && !sources.length)) {
+        elems.selector.remove();
+        qr.decodeFromCamera(elems.video, resultHandler);
+        return;
+      }
+      sources.forEach(function (source) {
+        var option = document.createElement('option');
+        option.value = source.id;
+        option.text = source.facing || 'default';
+        elems.selector.add(option);
+      });
+      elems.selector.onchange = function () {
+        qr.setSourceId(elems.selector.selectedOptions[0].value);
+      };
+      elems.result.innerHTML = 'Your browser is currently exposing ' +
+                                sources.length + ' cameras - use the ' +
+                                'dropdown above to select which you want ' +
+                                'to use';
+      elems.selector.onchange();
+      qr.decodeFromCamera(elems.video, resultHandler);
+    });
+
+//	qr.decodeFromCamera(video, resultHandler);
+       // attach some event handlers to reset and
     // stop whenever we want.
     reset.onclick = function () {
       qr.decodeFromCamera(video, resultHandler);

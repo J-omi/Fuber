@@ -64,6 +64,7 @@
     $fridge = json_decode($firebase->readIngredient(1), true);
     $ingredient = "";
     #var_dump($spoonacular->getIngredientImage());
+    $counter = 0;
     foreach($fridge as $foods => $content){
       #echo '<img src="' . $spoonacular->getIngredientImage($foods)->image . '"><br>';
       echo '<div class="items"><form id="food">';
@@ -72,15 +73,24 @@
       echo "Expires in " . $content['expirationDays'] . " days<br>";
       echo "Quantity: " . $content['quantity'] . "<br>";
       echo "</div></form></div>";
-      $ingredient = $ingredient . "|" . $foods;
+      if($counter == 0){
+        $ingredient = $foods;
+      } else{
+        $ingredient = $ingredient . "|" . $foods;
+      }
+      $counter++;
     }
     $ingredients = explode("|", $ingredient);
     echo '<form id="recipes" action="spoon.php" method="post"><div style="text-align:center;">';
     echo '<input type="submit" class="btn btn-success generate" value="Generate Recipes"><br><br>';
+
+    $ingredient_counter = 0;
     foreach($ingredients as $ingredient){
-      echo '<input type="hidden" id="textBox" name="ingredient" value="'.$ingredient.'"/><br>';
+      echo '<input type="hidden" id="textBox'.$ingredient_counter.'" name="ingredient'.$ingredient_counter.'" value="'.$ingredient.'"/>';
+      $ingredient_counter++;
     }
     echo '</div></form>';
+
     ?>
 
             <form id="food" class="food_input" action="grease.php" method="post">
