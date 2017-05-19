@@ -8,17 +8,12 @@ var config = {
     messagingSenderId: "221357839904"
 };
 
-var foodId = 0;
-
 firebase.initializeApp(config);
 
-function addFood() {
+$(document).ready(function(){
     var dbRef = firebase.database().ref();
-    var foodName = document.getElementById("textBox");
-    var inventoryBtn = document.getElementById("addInv");
     
-    
-    dbRef.child("Food/foodId" + window.foodId + "/foodName").set(foodName.value);
-    
-    window.foodId += 1;
-}
+    $(".removeBtn").click(function(){
+        dbRef.child("fridges/1/" + $(this).attr("id")).remove();
+    });
+});

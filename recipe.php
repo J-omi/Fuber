@@ -21,7 +21,7 @@
     <script src="js/jquery.js"></script>
 </head>
 
-<body>
+<body id="recipe_page">
     <div id="wrapper">
         <header role="banner" class="navbar navbar-fixed-top">
             <div class="navbar-header">
@@ -63,13 +63,23 @@
   $mash_key    = "XwoI3C2l7bmshg0FQlKrUB5tchLEp19b8lNjsnAQ0UtV4uFumg";
   $spoonacular = new Spoonacular($mash_key);
   $recipeId    = $_POST['ID'];
+  $recipeName  = $_POST['name'];
 
   $recipeSteps = $spoonacular->getRecipeSteps($recipeId);
   $recipe_info = $spoonacular->getRecipeInfo($recipeId);
 
-  echo '<img src="' . $recipe_info->image . '"><br>';
-  echo "Prep time: " . $recipe_info->preparationMinutes . " minutes<br>";
-  echo "Cook time: " . $recipe_info->cookingMinutes . " minutes<br>";
+  echo '<div id="recipe_wrap"><img id="recipe_image"  src="' . $recipe_info->image . '">';
+  echo '<div class="recipe_panel" id="instructions"><h3 id="recipe_name">' . $recipeName . '</h3><br>';
+  if($recipe_info->preparationMinutes != 0){
+    echo 'rep time: <span class="recipe_time">' . $recipe_info->preparationMinutes . " min</span><br>";
+  }else {
+    echo 'Prep time: <span class="recipe_time"> -- min</span><br>';
+  }
+  if($recipe_info->cookingMinutes != 0){
+    echo 'Cook time: <span class="recipe_time>"' . $recipe_info->cookingMinutes . " min</span><br>";
+  }else{
+    echo 'Cook time:<span class="recipe_time"> -- min</span><br>';
+  }
   echo "<br>Ingredient List:<br>";
 
   $ingredients = $recipe_info->extendedIngredients;
@@ -86,6 +96,8 @@
           echo "Step: " . $step->step . "<br><br>";
       }
   }
+
+  echo '</div></div>'
   ?>
     </div>
 </body>

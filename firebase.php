@@ -29,8 +29,15 @@ class Firebase {
 		return $name;
 	}
 
-	public function getFridge($id){
-		$fridge = $this->connection->get('/fridges/'.$id);
+	public function createIngredient($fridgeId, $food, $expiration, $quantity){
+		$entry = array("expirationDays" => $expiration,
+									 "quantity" => $quantity);
+		$this->connection->set('/fridges/'.$fridgeId.'/'.$food.'/', $entry);
+	}
+    
+	public function readIngredient($fridgeId){
+		$fridge = $this->connection->get('/fridges/' . $fridgeId);
 		return $fridge;
 	}
 }
+?>

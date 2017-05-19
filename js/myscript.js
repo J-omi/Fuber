@@ -1,4 +1,3 @@
-
 function addField(){
 	var counter = 0;
 	document.getElementById("add").onclick = function() {
