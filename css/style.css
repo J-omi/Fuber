@@ -240,13 +240,19 @@ input[type="text"] {
 }
 
 /* Recipe Details */
-#recipe_page {
 
+
+#recipe_page {
+  margin: 0;
+  padding: 0;
 }
 
 #recipe_name {
   text-align: center;
-  margin-top: 10px;
+  margin: 10px 0 20px 0;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 27px;
 }
 
 .recipe_panel {
@@ -268,7 +274,103 @@ input[type="text"] {
   z-index: 0;
 }
 
+#recipe_content {
+  margin: 25px;
+}
+
+.prep {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
 .recipe_time {
   position: absolute;
   right: 0;
+  margin-right: 25px;
+  padding-right: 10px;
+}
+
+#ingredients_section {
+  margin-top: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1.5px solid grey;
+  border-top: 1.5px solid grey;
+  border-radius: 8px;
+}
+
+.recipe_header {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+#ingredient_list {
+  margin-left: 5px;
+  line-height: normal;
+}
+
+#recipe_step {
+  margin-bottom: 25px;
+}
+
+#step_number {
+  font-weight: bold;
+  font-size: 110%;
+  color: #696969;
+}
+
+#step_detail {
+  margin: 0;
+}
+
+
+/* Ingredients Page */
+#Kitchen_header {
+  margin-bottom: 50px;
+}
+
+.items {
+  margin: 10px 30px 10px 30px;
+  border-top: 1px solid black;
+}
+
+.items:last-child {
+  border-bottom: 1px solid black;
+}
+
+#item_list {
+  margin-left: 10px;
+}
+
+#food_name {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+  padding-left: 0;
+}
+
+.btn-danger {
+  padding: 4px;
+}
+
+.generate {
+  margin-top: 20px;
+}
+
+.food_input {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 0 auto;
+  width: 70%;
+}
+
+#food_box {
+  text-align: center;
+}
+
+.input_title {
+  float: left;
+  font-weight: bold;
 }

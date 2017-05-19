@@ -69,35 +69,35 @@
   $recipe_info = $spoonacular->getRecipeInfo($recipeId);
 
   echo '<div id="recipe_wrap"><img id="recipe_image"  src="' . $recipe_info->image . '">';
-  echo '<div class="recipe_panel" id="instructions"><h3 id="recipe_name">' . $recipeName . '</h3><br>';
+  echo '<div class="recipe_panel" id="instructions"><div id="recipe_content"><h1 id="recipe_name">' . $recipeName . '</h1><br>';
+  echo '<div class="prep">';
   if($recipe_info->preparationMinutes != 0){
-    echo 'rep time: <span class="recipe_time">' . $recipe_info->preparationMinutes . " min</span><br>";
+    echo 'Preparation time: <span class="recipe_time">' . $recipe_info->preparationMinutes . " min</span><br>";
   }else {
-    echo 'Prep time: <span class="recipe_time"> -- min</span><br>';
+    echo 'Preparation time: <span class="recipe_time"> -- min</span><br>';
   }
   if($recipe_info->cookingMinutes != 0){
     echo 'Cook time: <span class="recipe_time>"' . $recipe_info->cookingMinutes . " min</span><br>";
   }else{
     echo 'Cook time:<span class="recipe_time"> -- min</span><br>';
   }
-  echo "<br>Ingredient List:<br>";
-
+  echo '</div><br><div id="ingredients_section"><h2 class="recipe_header">Ingredient List</h2>';
   $ingredients = $recipe_info->extendedIngredients;
   foreach($ingredients as $ingredient){
-    echo $ingredient->amount . " " . $ingredient->unit . " " . $ingredient->name . "<br>";
+    echo '<div id="ingredient_list">' . $ingredient->amount . " " . $ingredient->unit . " " . $ingredient->name . "</div><br>";
   }
 
-  echo "<br>";
+  echo '</div><br><h2 class="recipe_header">Directions</h2>';
 
   foreach ($recipeSteps as $recipe) {
       $steps = $recipe->steps;
       foreach ($steps as $step) {
-          echo "Step Number: " . $step->number . "<br>";
-          echo "Step: " . $step->step . "<br><br>";
+          echo '<div id="recipe_step"><div id="step_number">' . $step->number . "</div>";
+          echo '<div id="step_detail">' . $step->step . "</div></div>";
       }
   }
 
-  echo '</div></div>'
+  echo '</div></div></div>'
   ?>
     </div>
 </body>

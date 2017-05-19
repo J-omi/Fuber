@@ -1,61 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
+<!--[if IE 8]><html class="ie8 lt-ie10"><![endif]-->
+<!--[if IE 9]><html class="ie9 lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!-->
 <html lang="en">
+<!--<![endif]-->
 
 <head>
-    <title>Fuber Friends</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- css link-->
-    <link rel="stylesheet" href="css/simple-sidebar.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="MobileOptimized" content="320">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!------------------------css------------------------------->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/test.css">
+    <!---------------------------js----------------------------->
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="js/firebaseScript.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/slideout.js"></script>
 </head>
 
-<body class="apps_page">
-    <div id="wrapper">
-        <header role="banner" class="navbar navbar-fixed-top">
-            <div class="navbar-header">
-                <a href="#menu-click" id="menu-click">
-                    <div class="container" onclick="myFunction(this)">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                    </div>
-                </a>
-            </div>
-        </header>
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li>
-                </li>
-                <li class="sidebar-brand">
-                </li>
-                <li>
-                    <a href="index.html"><i class="fa fa-home"></i>Home</a>
-                </li>
-                <li>
-                    <a href="kitchen.html"><i class="fa fa-cutlery"></i>My Kitchen</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-qrcode"></i>QR scanner</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-archive"></i>Recipes</a>
-                </li>
-                <li>
-                    <a href="apps.html"><i class="fa fa-users"></i>Fuber Friends</a>
-                </li>
-            </ul>
-        </div>
+<body>
+    <nav id="menu" class="menu">
+        <ul class="sidebar-nav">
+            <li>
+                <a href="index.html"><i class="fa fa-home"></i>Home</a>
+            </li>
+            <li>
+                <a href="ingredients.php"><i class="fa fa-cutlery"></i>My Kitchen</a>
+            </li>
+            <li>
+                <a href="qr-code-reader/index.html"><i class="fa fa-qrcode"></i>QR scanner</a>
+            </li>
+            <li>
+                <a href="kitchen.html"><i class="fa fa-archive"></i>Recipes</a>
+            </li>
+            <li>
+                <a href="apps.html"><i class="fa fa-users"></i>Fuber Friends</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="panel" class="panel">
+        <button class="btn-hamburger js-slideout-toggle">
+                <div class="container" onclick="myFunction(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+        </button>
         <div id="apps_header">
             <i class="fa fa-users fa-5x" aria-hidden="true"></i>
             <h1 class="apps_title">Fuber Friends</h1>
@@ -98,9 +94,13 @@
                 <p class="app_detail">Captain Plan-It is an educational quiz game where users answer questions related to food groups. Answer correctly to earn keys which can unlock accessories for your own personal hero!</p>
             </div>
         </div>
+    </main>
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("change");
+        }
 
-    </div>
-    <script src="js/navbar.js"></script>
+    </script>
 </body>
 
 </html>
