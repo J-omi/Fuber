@@ -10,9 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/test.css">
     <!---------------------------js----------------------------->
-    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
-    <script src="js/firebaseScript.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="js/slideout.js"></script>
 </head>
 
@@ -90,18 +89,19 @@
       $ingredient_counter++;
     }
     echo '</div></form>';
-
+    
     ?>
 
             <form id="food" class="food_input" action="grease.php" method="post">
                 <div id="food_box">
-                    <span class="input_title">Food: </span><br><input type="text" name="food" value=""><br>
-                    <span class="input_title">Expiration: </span><br> <input type="text" name="expiration" value=""><br>
-                    <span class="input_title">Quantity: </span><br><input type="text" name="quantity" value=""><br><br>
-                    <input type="submit" class="btn btn-primary" value="Submit">
+                    <span class="input_title">Food: </span><br><input type="text" id="foodName" name="food" value=""><br>
+                    <span class="input_title">Expiration: </span><br> <input type="text" id="exp" name="expiration" value=""><br>
+                    <span class="input_title">Quantity: </span><br><input type="text" id="qty" name="quantity" value=""><br><br>
+                    <input type="submit" id="submitFood" class="btn btn-primary" value="Submit">
                 </div>
             </form>
     </main>
+    <script src="js/firebaseScript.js"></script>
     <script>
         function myFunction(x) {
             x.classList.toggle("change");
