@@ -13,20 +13,33 @@ $(document).ready(function(){
 
     var dbRef = firebase.database().ref();
     
+    var foodName = $("#foodName").val();
+    var exp = $("#exp").val();
+    var qty = $("#qty").val();
+    
     //Remove food
     $(".removeBtn").click(function(){
         dbRef.child("fridges/1/" + $(this).attr("id")).remove();
     });
     
-    //Add food
+    //Add food on submit
     $("#submitFood").click(function(){
         /*alert($("#foodName").val() 
               + "\n" + $("#exp").val()
               + "\n" + $("#qty").val()
              );*/
         
+        /*
         dbRef.child("fridges/1/").update($("#foodName").val());
         dbRef.child("fridges/1/" + $("#foodName").val()).set($("#exp").val());
-        dbRef.child("fridges/1/" + $("#foodName").val()).set($("#qty").val());
+        dbRef.child("fridges/1/" + $("#foodName").val()).set($("#qty").val());*/
+        
+        addFood(foodName, exp, qty);
     });
+    
+    function addFood(foodName, exp, qty) {
+        dbRef.child("fridges/1/").update(foodName);
+        dbRef.child("fridges/1/" + foodName).set(exp);
+        dbRef.child("fridges/1/" + foodName).set(qty);
+    }
 });

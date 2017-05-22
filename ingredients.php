@@ -13,6 +13,7 @@
     <script src="js/jquery.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="js/slideout.js"></script>
+    <script src="js/highlight.js"></script>
 </head>
 
 <body>
@@ -89,7 +90,7 @@
       $ingredient_counter++;
     }
     echo '</div></form>';
-    
+
     ?>
 
             <form id="food" class="food_input" action="grease.php" method="post">

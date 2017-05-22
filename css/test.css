@@ -351,6 +351,10 @@ input[type="text"] {
 
 /* Ingredients Page */
 
+.color{
+  background-color: yellow;
+}
+
 #Kitchen_header {
     margin-bottom: 50px;
 }

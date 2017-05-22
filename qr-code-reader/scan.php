@@ -1,41 +1,17 @@
 <?php
 
-$variable = $_POST['test'];
-
-$food_array = explode("|" , $variable);
-
-#echo "It worked! " . $variable;
-
-include('./firebase.php');
+include('../firebase.php');
 $firebase = new Firebase();
 
-$counter = 0;
-$ingredient_array = array();
-foreach($food_array as $food){
-  $ingredient_array[$counter]  
+$food_list = $_POST['test'];
+
+$foods = explode(":",$food_list);
+
+foreach($foods as $food){
+  $food_info = explode(",",$food);
+  $firebase->createIngredient(1, $food_info[0], $food_info[1], $food_info[2]);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-include('firebase.php');
-$firebase = new Firebase();
-if($_POST != null || $_POST != ""){
-  $firebase->createIngredient(1, $_POST['food'], $_POST['expiration'], $_POST['quantity']);
-}
-
-header("Location: ingredients.php");
+header("Location: ../ingredients.php");
 exit();
-
 ?>
