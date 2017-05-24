@@ -37,6 +37,22 @@ $(document).ready(function(){
         addFood(foodName, exp, qty);
     });
     
+    //Sign up with Username and Email
+    $("#signUp").click(function(){
+        var email = $("#email").val();
+        var pass = $("#pass").val();
+        var currUser = firebase.auth().currentUser; 
+        
+        firebase.auth().createUserWithEmailAndPassword(email, pass).then(function(currUser) {
+            alert("User successfully created! Welcome, " + currUser.uid);
+        }).catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            
+            alert(errorCode + ": " + errorMessage);
+        });
+    });
+    
     function addFood(foodName, exp, qty) {
         dbRef.child("fridges/1/").update(foodName);
         dbRef.child("fridges/1/" + foodName).set(exp);

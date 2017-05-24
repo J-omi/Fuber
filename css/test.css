@@ -467,7 +467,7 @@ input[type="text"] {
     position: absolute;
     border: none;
     top: 12px;
-    left: 12px;
+    left: 0;
     outline: none;
     width: 50px;
     background-color: transparent;
@@ -500,4 +500,29 @@ input[type="text"] {
 .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+/*            QR SCANNER            */
+
+video {
+  width: 65%;
+  margin: 10% auto;
+  display: block;
+  border-top: 2px groove grey;
+  border-bottom: 2px groove grey;
+  padding: 20px;
+  border-radius: 15%;
+}
+
+#qr_buttons {
+  margin: 30px;
+  display: block;
+  text-align: center;
+  display: none;
+}
+
+#qr_buttons button {
+  margin: 1%;
+  display: none;
 }

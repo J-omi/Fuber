@@ -15,7 +15,6 @@
     <script src="js/jquery.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script src="js/firebaseScript.js"></script>
-    <script src="js/slideout.js"></script>
 </head>
 
 <body id="recipe_page">
@@ -90,8 +89,6 @@
   ?>
     </main>
 </body>
-<script src="js/navbar.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-<script src="js/firebaseScript.js"></script>
+<script src="js/slideout.js"></script>
 
 </html>
