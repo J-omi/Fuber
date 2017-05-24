@@ -13,7 +13,6 @@
     <script src="js/jquery.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="js/slideout.js"></script>
-    <script src="js/highlight.js"></script>
 </head>
 
 <body>

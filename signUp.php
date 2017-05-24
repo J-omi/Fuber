@@ -7,7 +7,6 @@
         
         <h2>Sign Up</h2>
         
-        
         <table>
             <tr>
                 <td>
@@ -23,7 +22,7 @@
             
             <tr>
                 <td>
-                    <button id="signUp">Submit</button>
+                    <button id="signUp">Sign Up</button>
                     <button id="googleAuth">Sign up with Google</button>
                 </td>
             </tr>

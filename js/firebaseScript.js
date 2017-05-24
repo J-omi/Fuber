@@ -12,6 +12,7 @@ $(document).ready(function(){
     firebase.initializeApp(config);
 
     var dbRef = firebase.database().ref();
+    var currUser = firebase.auth().currentUser; 
     
     var foodName = $("#foodName").val();
     var exp = $("#exp").val();
@@ -41,10 +42,16 @@ $(document).ready(function(){
     $("#signUp").click(function(){
         var email = $("#email").val();
         var pass = $("#pass").val();
-        var currUser = firebase.auth().currentUser; 
         
         firebase.auth().createUserWithEmailAndPassword(email, pass).then(function(currUser) {
-            alert("User successfully created! Welcome, " + currUser.uid);
+            var usrEmail = currUser.email;
+            usrEmail = usrEmail.substr(0, usrEmail.indexOf('@'));
+            
+            dbRef.child("users/" + usrEmail + "/fridge_id").set(currUser.uid);
+            
+            alert("User successfully created! Welcome, " + usrEmail);
+            
+            window.location.replace("login.php");
         }).catch(function(error) {
             var errorCode = error.code;
             var errorMessage = error.message;
