@@ -50,7 +50,6 @@
             <h1>Recipes</h1>
         </div>
         <?php
-	print_r($_POST);
 					include("Spoonacular.php");
         	require_once "vendor/autoload.php";
 					/*Instantiates variable $recipe as an array.
@@ -66,7 +65,12 @@
 					$mash_key = "XwoI3C2l7bmshg0FQlKrUB5tchLEp19b8lNjsnAQ0UtV4uFumg";
 					$spoonacular = new Spoonacular($mash_key);
           $spoonacular->easterEgg($_POST);
+					if (isset($_POST['food'])){
+						$food = $_POST['food'];
+						$recipes = $spoonacular->getRecipeByIngredients($food);
+					} else {
 					$recipes = $spoonacular->getRecipeByIngredients($_POST);
+					}
 
         	foreach ($recipes as $recipe){
             echo '<div class="recipe_list col-sm-12 col-xs-12">';

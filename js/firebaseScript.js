@@ -88,6 +88,15 @@ $(document).ready(function(){
         });
     });
 
+    //change Sign In/Sign Out button text
+    firebase.auth().onAuthStateChanged(function(currUser){
+        if (currUser) {
+            $("#home_login").html("SIGN OUT");
+        } else {
+            $("#home_login").html("SIGN IN");
+        }
+    });
+    
     //Log in with Username and Email
     $("#login").click(function(){
 		var emailVal = $("#email").val();
@@ -95,6 +104,7 @@ $(document).ready(function(){
 
 		firebase.auth().signInWithEmailAndPassword(emailVal, passVal).then(function(currUser) {
 	    document.cookie = "uid=" + currUser.uid;
+
             window.location.replace("index.html");
 
     	}).catch(function(error) {
@@ -105,12 +115,12 @@ $(document).ready(function(){
     	});
 	});
 
-    //Log out, and redirect to sign in page
+    //LOG OUT, and redirect to sign in page
     $("#home_login").click(function(){
 		firebase.auth().signOut().then(function() {
 		  // Sign-out successful.
-		    alert("Thank you, come again");
 		    document.cookie = "uid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
             window.location.replace("login.html");
 		}).catch(function(error) {
 			var errorCode = error.code;

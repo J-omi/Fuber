@@ -67,26 +67,25 @@
     echo $user;
 */
     $uid = $_COOKIE['uid'];
-    /*
-    Checks to see if use is logged in
-    */
     if (!isset($uid)){
 	      echo ("You must be logged in to use this page");
-        echo '<a href="login.html">Log In</a>';
-        echo '<a href="signUp.html">Sign Up</a>';
 	      exit();
     }
     $fridge = json_decode($firebase->readIngredient($uid), true);
     $ingredient = "";
+    #var_dump($spoonacular->getIngredientImage());
     $counter = 0;
+    echo '<form id="food_list" action="spoon.php" method="post">';
     foreach($fridge as $foods => $content){
-      echo '<div class="items"><form id="food">';
+      #echo '<img src="' . $spoonacular->getIngredientImage($foods)->image . '"><br>';
+      echo '<div class="items">';
       echo '<div id="item_list"><h3 id="food_name" class="col-sm-9 col-xs-9">' . $foods . "</h3><br>";
       echo "<button class='removeBtn btn btn-danger col-sm-3 col-xs-3' id='".$foods."'>Remove</button>";
       echo "Expires in " . $content['expirationDays'] . " days<br>";
       echo "Quantity: " . $content['quantity'] . "<br>";
       echo "</div>";
-      echo "</form></div>";
+      echo "</div>";
+      echo '<input type="checkbox" name="food[]" value="'. $foods . '" />';
      if($counter == 0){
         $ingredient = $foods;
       } else{
@@ -94,9 +93,11 @@
       }
       $counter++;
     }
-    echo" <button class='add'>add</button>";
+    echo '<input type="submit" value="Make Recipes"/><br>';
+    echo "</form>";
+        echo" <button class='add'>add</button>";
     $ingredients = explode("|", $ingredient);
-    echo '<form id="recipes" action="spoon.php" method="post"><div style="text-align:center;">';
+    //echo '<form id="recipes" action="spoon.php" method="post"><div style="text-align:center;">';
     echo '<input type="submit" class="btn btn-success generate" value="Generate Recipes"><br><br>';
 
     $ingredient_counter = 0;
