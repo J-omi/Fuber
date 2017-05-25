@@ -33,6 +33,8 @@ $(document).ready(function(){
                 dbRef.child("fridges/" + userId + "/" + $(this).attr("id")).remove();
             }
         });
+        
+        window.location.replace("ingredients.php");
     });
 
     //Add food on submit
@@ -130,11 +132,11 @@ $(document).ready(function(){
 		});
     });
     
-    function addFood(currUser, foodName, exp, qty) {
+    /*function addFood(currUser, foodName, exp, qty) {
 
-        /*dbRef.child("fridges/1/").update(foodName);
+        dbRef.child("fridges/1/").update(foodName);
         dbRef.child("fridges/1/" + foodName).set(exp);
-        dbRef.child("fridges/1/" + foodName).set(qty);*/
+        dbRef.child("fridges/1/" + foodName).set(qty);
         firebase.auth().onAuthStateChanged(function(currUser){
             var userId = currUser.uid;
 
@@ -143,7 +145,45 @@ $(document).ready(function(){
                 dbRef.child("fridges/" + userId + "/" + foodName + "/quantity").set(qty);
             }
         });
-    }
+    }*/
+    
+    //Sign up with a Google account
+    $("#googleAuth").click(function(){
+        
+        var provider = new firebase.auth.GoogleAuthProvider();
+        
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            var user = result.user;
+
+            var usrEmail = user.email;
+            usrEmail = usrEmail.substr(0, usrEmail.indexOf('@'));
+
+            dbRef.child("users/" + usrEmail + "/fridge_id").set(user.uid);
+
+
+            dbRef.child("fridges/" + user.uid + "/" + "Sugar" + "/expirationDays").set("0");
+            dbRef.child("fridges/" + user.uid + "/" + "Sugar" + "/quantity").set("1");
+
+            dbRef.child("fridges/" + user.uid + "/" + "Flour" + "/expirationDays").set("0");
+            dbRef.child("fridges/" + user.uid + "/" + "Flour" + "/quantity").set("1");
+	    document.cookie = "uid=" + user.uid;
+            
+            window.location.replace("index.html");
+            
+        }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+
+            alert(errorCode + ": " + errorMessage + "\n"
+                 + email + "\n"
+                 + credential);
+        });
+    });
 });
 
 function getCookie(cname) {

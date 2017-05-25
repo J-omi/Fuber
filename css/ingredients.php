@@ -18,26 +18,25 @@
 </head>
 
 <body>
-    <script>
-        function checkAll(ele) {
-            var checkboxes = document.getElementsByTagName('input');
-            if (ele.checked) {
-                for (var i = 0; i < checkboxes.length; i++) {
-                    if (checkboxes[i].type == 'checkbox') {
-                        checkboxes[i].checked = true;
-                    }
-                }
-            } else {
-                for (var i = 0; i < checkboxes.length; i++) {
-                    console.log(i)
-                    if (checkboxes[i].type == 'checkbox') {
-                        checkboxes[i].checked = false;
-                    }
-                }
-            }
-        }
-
-    </script>
+  <script>
+  function checkAll(ele) {
+  var checkboxes = document.getElementsByTagName('input');
+  if (ele.checked) {
+      for (var i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].type == 'checkbox') {
+              checkboxes[i].checked = true;
+          }
+      }
+  } else {
+      for (var i = 0; i < checkboxes.length; i++) {
+          console.log(i)
+          if (checkboxes[i].type == 'checkbox') {
+              checkboxes[i].checked = false;
+          }
+      }
+  }
+}
+  </script>
     <nav id="menu" class="menu">
         <ul class="sidebar-nav">
             <li>
@@ -93,17 +92,17 @@
     $fridge = json_decode($firebase->readIngredient($uid), true);
     $ingredient = "";
     $counter = 0;
-    echo '<label class="checkbox-label">Toggle All<input id="checkbox" type="checkbox" onClick="checkAll(this)"/></label><br>';
+    echo '<labe class="cbox">Toggle All<input id="checkbox" type="checkbox" onClick="checkAll(this)"/></label><br>';
     echo '<form id="food_list" action="spoon.php" method="post">';
     foreach($fridge as $foods => $content){
       echo '<div class="items">';
       echo '<div id="item_list"><h3 id="food_name" class="col-sm-9 col-xs-9">' . $foods . "</h3><br>";
-      echo '<button type="button" class="removeBtn btn btn-danger col-sm-3 col-xs-3" id="'.$foods.'">Remove</button>';
+      echo "<button class='removeBtn btn btn-danger col-sm-3 col-xs-3' id='".$foods."'>Remove</button>";
       echo "Expires in " . $content['expirationDays'] . " days<br>";
       echo "Quantity: " . $content['quantity'] . '<input id="checkboxes" type="checkbox" name="food[]" value="' . $foods . '"/><br>';
       echo "</div>";
       echo "</div>";
-
+      #echo '<input id="checkboxes" type="checkbox" name="food[]" value="'. $foods . '" />';
      if($counter == 0){
         $ingredient = $foods;
       } else{
