@@ -66,10 +66,10 @@
 					$spoonacular = new Spoonacular($mash_key);
           $spoonacular->easterEgg($_POST);
 					if (isset($_POST['food'])){
-						$food = $_POST['food'];
-						$recipes = $spoonacular->getRecipeByIngredients($food);
+					       $food = $_POST['food'];
+						     $recipes = $spoonacular->getRecipeByIngredients($food);
 					} else {
-					$recipes = $spoonacular->getRecipeByIngredients($_POST);
+					       $recipes = $spoonacular->getRecipeByIngredients($_POST);
 					}
 
         	foreach ($recipes as $recipe){

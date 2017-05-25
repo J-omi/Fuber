@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/test.css">
-    <!---------------------------js----------------------------->
+    <!-------------------------js----------------------------->
     <script src="js/jquery.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="js/slideout.js"></script>
@@ -81,10 +81,7 @@
     include('firebase.php');
 
     $firebase = new Firebase();
-/*
-    $user = $firebase->auth()->currentUser;
-    echo $user;
-*/
+
     $uid = $_COOKIE['uid'];
     if (!isset($uid)){
 	      echo ("You must be logged in to use this page");
@@ -94,12 +91,10 @@
     }
     $fridge = json_decode($firebase->readIngredient($uid), true);
     $ingredient = "";
-    #var_dump($spoonacular->getIngredientImage());
     $counter = 0;
     echo '<input type="checkbox" onClick="checkAll(this)"/>Toggle All<br>';
     echo '<form id="food_list" action="spoon.php" method="post">';
     foreach($fridge as $foods => $content){
-      #echo '<img src="' . $spoonacular->getIngredientImage($foods)->image . '"><br>';
       echo '<div class="items">';
       echo '<div id="item_list"><h3 id="food_name" class="col-sm-9 col-xs-9">' . $foods . "</h3><br>";
       echo "<button class='removeBtn btn btn-danger col-sm-3 col-xs-3' id='".$foods."'>Remove</button>";

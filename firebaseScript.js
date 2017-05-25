@@ -103,22 +103,23 @@ $(document).ready(function(){
 
     //Log out, and redirect to sign in page
     $("#home_login").click(function(){
-		/*firebase.auth().signOut().then(function(currUser) {
+		firebase.auth().signOut().then(function(currUser) {
 		  // Sign-out successful.
             if (currUser) {
 		  	   alert("Thank you, come again, " + currUser.email);
+           document.cookie = "uid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 		  	   window.location.replace("login.html");
             }
 		}).catch(function(error) {
 			var errorCode = error.code;
         	var errorMessage = error.message;
-        
+
         	alert(errorCode + ": " + errorMessage);
-		});*/
-        
+		});
+
         window.location.replace("login.html");
     });
-    
+
     function addFood(currUser, foodName, exp, qty) {
 
         /*dbRef.child("fridges/1/").update(foodName);
