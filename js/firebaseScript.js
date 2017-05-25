@@ -23,7 +23,8 @@ $(document).ready(function(){
    
     //Remove food
     $(".removeBtn").click(function(){
-            dbRef.child("fridges/1/" + $(this).attr("id")).remove();
+	    var uid = getCookie("uid");	    
+            dbRef.child("fridges/" + uid + "/" + $(this).attr("id")).remove();
 
         firebase.auth().onAuthStateChanged(function(currUser){
             //Each Remove button has an id matches the name of their respective food.
@@ -60,7 +61,7 @@ $(document).ready(function(){
     });
 
     //Sign up with Username and Email
-    $("#signUp").click(function(){
+    $("#signup").click(function(){
         var email = $("#email").val();
         var pass = $("#pass").val();
 
@@ -106,20 +107,17 @@ $(document).ready(function(){
 
     //Log out, and redirect to sign in page
     $("#home_login").click(function(){
-		/*firebase.auth().signOut().then(function(currUser) {
+		firebase.auth().signOut().then(function() {
 		  // Sign-out successful.
-            if (currUser) {
-		  	   alert("Thank you, come again, " + currUser.email);
-		  	   window.location.replace("login.html");
-            }
+		    alert("Thank you, come again");
+		    document.cookie = "uid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            window.location.replace("login.html");
 		}).catch(function(error) {
 			var errorCode = error.code;
         	var errorMessage = error.message;
         
         	alert(errorCode + ": " + errorMessage);
-		});*/
-        
-        window.location.replace("login.html");
+		});
     });
     
     function addFood(currUser, foodName, exp, qty) {
@@ -137,3 +135,19 @@ $(document).ready(function(){
         });
     }
 });
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+

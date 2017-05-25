@@ -50,7 +50,7 @@
             <h1>Recipes</h1>
         </div>
         <?php
-
+	print_r($_POST);
 					include("Spoonacular.php");
         	require_once "vendor/autoload.php";
 					/*Instantiates variable $recipe as an array.

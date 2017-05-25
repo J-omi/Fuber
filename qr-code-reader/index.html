@@ -5,12 +5,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!------------------------css------------------------------->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/test.css">
+    <script src="../js/verifyLogin.js"></script>
   </head>
   <body>
+  <script type="text/javascript">
+  if (!isLoggedIn()){
+	alert("You need to login to view this page");
+	window.location.replace("../index.html");
+  } 
+  </script>
   <div id="apps_header">
       <i class="fa fa-qrcode fa-5x" aria-hidden="true"></i>
       <h1 class="apps_title">QR Scanner</h1>
