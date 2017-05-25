@@ -13,6 +13,8 @@
     <script src="js/jquery.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="js/slideout.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/firebaseScript.js"></script>
 </head>
 
 <body>
@@ -29,10 +31,10 @@
                 <a href="kitchen.html"><i class="fa fa-cutlery"></i>My Kitchen</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-qrcode"></i>QR scanner</a>
+                <a href="qr-code-reader/index.html"><i class="fa fa-qrcode"></i>QR scanner</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-archive"></i>Recipes</a>
+                <a href="kitchen.html"><i class="fa fa-archive"></i>Recipes</a>
             </li>
             <li>
                 <a href="apps.html"><i class="fa fa-users"></i>Fuber Friends</a>
@@ -60,6 +62,10 @@
     include('firebase.php');
 
     $firebase = new Firebase();
+/*
+    $user = $firebase->auth()->currentUser;
+    echo $user;
+*/
     $fridge = json_decode($firebase->readIngredient(1), true);
     $ingredient = "";
     #var_dump($spoonacular->getIngredientImage());
@@ -79,6 +85,7 @@
       }
       $counter++;
     }
+    echo" <button class='add'>add</button>";
     $ingredients = explode("|", $ingredient);
     echo '<form id="recipes" action="spoon.php" method="post"><div style="text-align:center;">';
     echo '<input type="submit" class="btn btn-success generate" value="Generate Recipes"><br><br>';
@@ -101,11 +108,21 @@
                 </div>
             </form>
     </main>
-    <script src="js/firebaseScript.js"></script>
     <script>
         function myFunction(x) {
             x.classList.toggle("change");
         }
+
+    </script>
+    <script>
+        $(document).on('click', '.add', function() {
+            if ($(".prepended").length < 1) {
+                $('<input type="checkbox" class ="prepended">').prependTo(".items");
+            }
+        });
+        $(document).on('click', '#remove', function() {
+            $(".prepended").remove();
+        });
 
     </script>
 </body>
