@@ -94,7 +94,7 @@
     $fridge = json_decode($firebase->readIngredient($uid), true);
     $ingredient = "";
     $counter = 0;
-    echo '<label class="checkbox-label">Toggle All<input id="checkbox" type="checkbox" onClick="checkAll(this)"/></label><br>';
+    echo '<div class="checkbox"><label class="checkbox-label">Toggle All<input id="checkbox" type="checkbox" onClick="checkAll(this)"/></label></div><br><br>';
     echo '<form id="food_list" action="spoon.php" method="post">';
     foreach($fridge as $foods => $content){
       echo '<div class="items">';

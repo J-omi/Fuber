@@ -640,9 +640,16 @@ video {
 label.checkbox-label input[type=checkbox] {
     position: relative;
     vertical-align: middle;
+    bottom: -1;
 }
 
 #checkbox {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
+    margin-left:5px;
+}
+
+.checkbox {
+    float: right;
+    margin-right:30px;
 }
