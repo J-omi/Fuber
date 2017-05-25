@@ -18,6 +18,25 @@
 </head>
 
 <body>
+  <script>
+  function checkAll(ele) {
+  var checkboxes = document.getElementsByTagName('input');
+  if (ele.checked) {
+      for (var i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].type == 'checkbox') {
+              checkboxes[i].checked = true;
+          }
+      }
+  } else {
+      for (var i = 0; i < checkboxes.length; i++) {
+          console.log(i)
+          if (checkboxes[i].type == 'checkbox') {
+              checkboxes[i].checked = false;
+          }
+      }
+  }
+}
+  </script>
     <nav id="menu" class="menu">
         <ul class="sidebar-nav">
             <li>
@@ -75,6 +94,7 @@
     $ingredient = "";
     #var_dump($spoonacular->getIngredientImage());
     $counter = 0;
+    echo '<input type="checkbox" onClick="checkAll(this)"/>Toggle All<br>';
     echo '<form id="food_list" action="spoon.php" method="post">';
     foreach($fridge as $foods => $content){
       #echo '<img src="' . $spoonacular->getIngredientImage($foods)->image . '"><br>';
@@ -85,7 +105,7 @@
       echo "Quantity: " . $content['quantity'] . "<br>";
       echo "</div>";
       echo "</div>";
-      echo '<input type="checkbox" name="food[]" value="'. $foods . '" />';
+      echo '<input id="checkboxes" type="checkbox" name="food[]" value="'. $foods . '" />';
      if($counter == 0){
         $ingredient = $foods;
       } else{
@@ -93,19 +113,8 @@
       }
       $counter++;
     }
-    echo '<input type="submit" value="Make Recipes"/><br>';
-    echo "</form>";
-        echo" <button class='add'>add</button>";
-    $ingredients = explode("|", $ingredient);
-    //echo '<form id="recipes" action="spoon.php" method="post"><div style="text-align:center;">';
-    echo '<input type="submit" class="btn btn-success generate" value="Generate Recipes"><br><br>';
-
-    $ingredient_counter = 0;
-    foreach($ingredients as $ingredient){
-      echo '<input type="hidden" id="textBox'.$ingredient_counter.'" name="ingredient'.$ingredient_counter.'" value="'.$ingredient.'"/>';
-      $ingredient_counter++;
-    }
-    echo '</div></form>';
+    echo '<br><div style="text-align:center;"><input type="submit" class="btn btn-success generate" value="Make Recipes"/><br><br>';
+    echo "</div></form>";
 
     ?>
 
@@ -122,17 +131,6 @@
         function myFunction(x) {
             x.classList.toggle("change");
         }
-
-    </script>
-    <script>
-        $(document).on('click', '.add', function() {
-            if ($(".prepended").length < 1) {
-                $('<input type="checkbox" class ="prepended">').prependTo(".items");
-            }
-        });
-        $(document).on('click', '#remove', function() {
-            $(".prepended").remove();
-        });
 
     </script>
 </body>
