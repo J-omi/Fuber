@@ -66,7 +66,8 @@
     $user = $firebase->auth()->currentUser;
     echo $user;
 */
-    $fridge = json_decode($firebase->readIngredient(1), true);
+    $uid = $_COOKIE['uid'];
+    $fridge = json_decode($firebase->readIngredient($uid), true);
     $ingredient = "";
     #var_dump($spoonacular->getIngredientImage());
     $counter = 0;

@@ -15,8 +15,6 @@
     <script src="js/jquery.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script src="js/firebaseScript.js"></script>
-    <script src="https://apis.google.com/js/plusone.js"></script>
-
 </head>
 
 <body id="recipe_page">
@@ -60,7 +58,6 @@
 
   echo '<div id="recipe_wrap"><img id="recipe_image"  src="' . $recipe_info->image . '">';
   echo '<div class="recipe_panel" id="instructions"><div id="recipe_content"><h1 id="recipe_name">' . $recipeName . '</h1><br>';
-  echo '<g:plus action="share" annotation="bubble"></g:plus>';
   echo '<div class="prep">';
   if($recipe_info->preparationMinutes != 0){
     echo 'Preparation time: <span class="recipe_time">' . $recipe_info->preparationMinutes . " min</span><br>";

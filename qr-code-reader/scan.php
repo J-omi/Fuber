@@ -23,10 +23,11 @@ foreach($foods as $food){
 echo '<input type="button" value="Say Hi!" onclick="' . $location . '" />';
 */
 
+$uid = $_COOKIE['uid'];
 
 foreach($foods as $food){
   $food_info = explode(",",$food);
-  $firebase->createIngredient(1, $food_info[0], $food_info[1], $food_info[2]);
+  $firebase->createIngredient($uid, $food_info[0], $food_info[1], $food_info[2]);
 }
 
 header("Location: ../ingredients.php");

@@ -1,36 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <head>
-            <title>Sign Up</title>
-        </head>
-        
-        <h2>Sign Up</h2>
-        
-        <table>
-            <tr>
-                <td>
-                    <input id="email" type="text" placeholder="Email" required/>
-                </td>
-            <tr>
-            
-            <tr>
-                <td>
-                    <input id="pass" type="password" placeholder="Password" required/> 
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
-                    <button id="signUp">Sign Up</button>
-                    <button id="googleAuth">Sign up with Google</button>
-                </td>
-            </tr>
-        </table>
-        
-        <script src="js/jquery.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
-        <script src="js/firebaseScript.js"></script>
+      <head>
+          <title>Login</title>
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta http-equiv="cleartype" content="on">
+          <meta name="MobileOptimized" content="320">
+          <meta name="HandheldFriendly" content="True">
+          <meta name="apple-mobile-web-app-capable" content="yes">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+          <!------------------------css------------------------------->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <link rel="stylesheet" href="css/test.css">
+          <!---------------------------js----------------------------->
+          <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+          <script src="js/firebaseScript.js"></script>
+          <script src="js/jquery.js"></script>
+          <script src="js/slideout.js"></script>
+      </head>
+      <body id="login_page">
+        <nav id="menu" class="menu">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="index.html"><i class="fa fa-home"></i>Home</a>
+                </li>
+                <li>
+                    <a href="ingredients.php"><i class="fa fa-cutlery"></i>My Kitchen</a>
+                </li>
+                <li>
+                    <a href="qr-code-reader/index.html"><i class="fa fa-qrcode"></i>QR scanner</a>
+                </li>
+                <li>
+                    <a href="kitchen.html"><i class="fa fa-archive"></i>Recipes</a>
+                </li>
+                <li>
+                    <a href="apps.html"><i class="fa fa-users"></i>Fuber Friends</a>
+                </li>
+            </ul>
+        </nav>
+        <main id="panel" class="panel">
+            <button class="btn-hamburger js-slideout-toggle">
+                    <div class="container" onclick="myFunction(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+            </button>
+            <div id="apps_header">
+                <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+                <h1 class="apps_title">Join us!</h1>
+            </div>
+      <div class="login_section">
+        <h2 id="Sign_in">Sign up</h2>
+          <table>
+              <tr>
+                  <td>
+                      <input id="email" type="text" placeholder="Email" required/>
+                  </td>
+              <tr>
 
+              <tr>
+                  <td>
+                      <input id="pass" type="password" placeholder="Password" required/>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>
+                      <button id="signup">Sign Up</button>
+                      <button id="googleAuth">Sign up with Google</button>
+                  </td>
+              </tr>
+          </table>
+        </div>
+      </main>
     </body>
+    <script src="js/jquery.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="js/firebaseScript.js"></script>
 </html>

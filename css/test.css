@@ -134,6 +134,29 @@ html {
     color: black;
 }
 
+/*------------------------------Login------------------------------*/
+  .login_section {
+    display: table;
+    margin: 15% auto;
+    text-align: center;
+    background-color: white;
+    padding: 10% 7% 20% 7%;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #888888;
+    height: 100%;
+  }
+
+  .login_section input {
+    margin-bottom: 10px;
+    border: 1px solid lightgrey;
+    box-shadow: 2px 2px 2px #888888;
+  }
+
+  #Sign_in {
+    font-size: 30px;
+    font-weight: bold;
+  }
 
 /*---------------------------------------app--------------------------------*/
 
@@ -254,7 +277,7 @@ html {
     position: relative;
 }
 
-input[type="text"] {
+#ingredients input[type="text"] {
     border: 2px solid black;
 }
 

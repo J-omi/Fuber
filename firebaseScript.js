@@ -20,7 +20,6 @@ $(document).ready(function(){
     var exp = $("#exp").val();
     var qty = $("#qty").val();*/
 
-   
     //Remove food
     $(".removeBtn").click(function(){
             dbRef.child("fridges/1/" + $(this).attr("id")).remove();
@@ -60,7 +59,7 @@ $(document).ready(function(){
     });
 
     //Sign up with Username and Email
-    $("#signUp").click(function(){
+    $("#signup").click(function(){
         var email = $("#email").val();
         var pass = $("#pass").val();
 
@@ -76,7 +75,6 @@ $(document).ready(function(){
 
             dbRef.child("fridges/" + currUser.uid + "/" + "Flour" + "/expirationDays").set("0");
             dbRef.child("fridges/" + currUser.uid + "/" + "Flour" + "/quantity").set("1");
-	    document.cookie = "uid=" + currUser.uid;
 
             window.location.replace("login.html");
         }).catch(function(error) {
@@ -93,7 +91,6 @@ $(document).ready(function(){
 		var passVal = $("#pass").val();
 
 		firebase.auth().signInWithEmailAndPassword(emailVal, passVal).then(function(currUser) {
-	    document.cookie = "uid=" + currUser.uid;
             window.location.replace("index.html");
 
     	}).catch(function(error) {
