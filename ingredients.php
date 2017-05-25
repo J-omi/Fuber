@@ -88,6 +88,8 @@
     $uid = $_COOKIE['uid'];
     if (!isset($uid)){
 	      echo ("You must be logged in to use this page");
+        echo '<a href="login.html">Log In</a>';
+        echo '<a href="signUp.html">Sign Up</a>';
 	      exit();
     }
     $fridge = json_decode($firebase->readIngredient($uid), true);
