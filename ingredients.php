@@ -48,7 +48,7 @@
                 <a href="index.html"><i class="fa fa-home"></i>Home</a>
             </li>
             <li>
-                <a href="kitchen.html"><i class="fa fa-cutlery"></i>My Kitchen</a>
+                <a href="ingredients.php"><i class="fa fa-cutlery"></i>My Kitchen</a>
             </li>
             <li>
                 <a href="qr-code-reader/index.html"><i class="fa fa-qrcode"></i>QR scanner</a>

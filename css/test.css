@@ -42,23 +42,41 @@ html {
     display: block;
     text-align: center;
     width: 100%;
+    clear: both;
+    margin: 0;
 }
 
 .home_header {
     text-align: center;
 }
 
+.twitter {
+  float: right;
+  padding: 0.5%;
+  margin: 0;
+  margin-top: 3%;
+}
+
+.twitter span {
+  font-weight: bold;
+  text-align: center;
+  margin-left: 8%;
+  margin-right: 0;
+  font-size: 110%;
+  font-family: 'Arial';
+}
+
 #home_login {
-    position: absolute;
-    top: 16px;
-    right: 3%;
-    border: 1.5px solid lightblue;
+    float: right;
+    font-weight: bold;
+    margin: 3% 2% 0 2.5%;
+    margin-top: 3%;
 }
 
 #home_logo {
     width: 80%;
     height: 20%;
-    margin: 10% 0 0 8%;
+    margin: 0 0 0 8%;
 }
 
 .home_icon {
